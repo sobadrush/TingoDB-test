@@ -30,5 +30,6 @@ prodList.forEach((item, index, array) => {
   
 });
 
+db.close();
   
   
