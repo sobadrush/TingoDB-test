@@ -17,19 +17,17 @@ var Db = require('tingodb')().Db,
 var db = new Db('.', {});
 
 // Fetch a collection to insert document into
-var collection = db.collection("Products-TingoDB.db");
+var productCollection = db.collection("Products-TingoDB.db");
 
 // 逐筆新增products.json中的element
 prodList.forEach((item, index, array) => {
   console.log(item, index, array); // 物件, 索引, 全部陣列
   
   // Insert a single document
-  collection.insert(
- 	item,
- 	function(err, result) {
- 		assert.equal(null, err);
- 	}
-  );
+  productCollection.insert(item, function(err, result) {
+      assert.equal(null, err);
+  });
+  
 });
 
   
